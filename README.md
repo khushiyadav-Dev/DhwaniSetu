@@ -55,4 +55,4 @@ python -m streamlit run app.py
 - [ ] Vibration-based monitoring mode
 
 ## Author
-Made by **[KHUSHI YADAV]** — student project.
+Made by **KHUSHI YADAV** — student project.
