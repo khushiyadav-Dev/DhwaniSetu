@@ -16,7 +16,7 @@
 
 </div>
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## 🚨 The problem
 
@@ -28,11 +28,11 @@ Engineers already do the cheap version — **hammer-tap testing** — but it dep
 
 > ⚠️ **It is a screening aid, not a certified safety report.** Final decisions must come from a qualified structural engineer.
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## ⚙️ How it works
 
-<img src="assets/pipeline.png" alt="DhwaniSetu pipeline" width="100%" />
+<img src="assets/pipeline.gif" alt="DhwaniSetu pipeline — tap to verdict" width="100%" />
 
 1. **Record** a tap on the surface (mic on a phone is enough) or upload a `.wav` file.
 2. **Isolate** the tap — the loudest transient is cut out as a fixed 0.6 s clip, so background noise before and after is ignored.
@@ -40,21 +40,17 @@ Engineers already do the cheap version — **hammer-tap testing** — but it dep
 4. **Classify** with a Random Forest (300 trees, trained with 5-fold cross-validation).
 5. **Return** `Normal` / `Warning` / `Danger` plus a confidence bar and the waveform + spectrum of that exact tap.
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## 🔊 What the app actually hears
 
 <img src="assets/signals.png" alt="Waveforms and spectra for the three classes" width="100%" />
 
-| Verdict | Sound character | What it suggests |
-|:--|:--|:--|
-| 🟢 **Normal** | Short, bright, high-pitched ring (~3.4 kHz peak) | Solid, tight concrete |
-| 🟠 **Warning** | Lower and longer ring (~1 kHz peak) | Possibly hollow — get it checked |
-| 🔴 **Danger** | Dull, damped, noisy, very low (~440 Hz peak) | Possibly cracked — call an engineer |
+<img src="assets/verdict.gif" alt="Normal, Warning and Danger — what each sound means" width="100%" />
 
 The physics is simple and that is why it works: a solid mass reflects high frequencies back quickly, while a hollow or cracked volume lets energy escape and rings low and long.
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## 📊 Model card
 
@@ -71,7 +67,7 @@ The physics is simple and that is why it works: a solid mass reflects high frequ
 
 **Read that 100% carefully — it is not a real-world result.** The clips are computer-generated from three different frequency/decay profiles, so the classes are cleanly separable by construction. Real taps have echoes, ambient traffic, hand noise and surface variation. A perfect score here means the pipeline is correct, not that the model is ready.
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## ✨ Features
 
@@ -84,7 +80,7 @@ The physics is simple and that is why it works: a solid mass reflects high frequ
 | ⚖️ **Honest by design** | Synthetic-data warning is shown inside the app, not hidden |
 | 🪶 **Lightweight** | Pure NumPy/SciPy feature extraction, no deep-learning runtime |
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## 🖥️ Run it locally
 
@@ -102,7 +98,7 @@ To use **real recordings** instead of the synthetic set, drop your clips into
 `data/real/Normal/`, `data/real/Warning/`, `data/real/Danger/` and run `train.py` again —
 it picks `data/real` automatically when that folder exists.
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## 🗂️ Project structure
 
@@ -118,7 +114,7 @@ DhwaniSetu/
 └── assets/                 # Screenshots and diagrams used in this README
 ```
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## ⚠️ Limitations — please read before trusting it
 
@@ -128,7 +124,7 @@ DhwaniSetu/
 - **One tap is one opinion.** A real inspection averages many taps per location.
 - **Decision support, not a verdict.** A qualified engineer must make the final call.
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## 🗺️ Roadmap
 
@@ -138,7 +134,7 @@ DhwaniSetu/
 - [ ] Vibration-based monitoring for continuous sensing
 - [ ] More Indian languages (Marathi, Tamil, Bengali)
 
----
+<img src="assets/divider.gif" alt="" width="100%" />
 
 ## 👩‍💻 Author
 
@@ -151,9 +147,6 @@ Cloud + AI/ML · building tools that turn messy signals into clear decisions.
 
 <sub>Built as a student project to explore audio feature engineering, classical ML, and end-to-end deployment. Feedback and real tap recordings are very welcome.</sub>
 
+## 🗺️ Roadmap
 
-
-
-
-## Author
-Made by **KHUSHI YADAV** — student project.
+- [ ] Collect 100+ real taps per class and publish **real** accuracy
